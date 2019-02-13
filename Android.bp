@@ -133,18 +133,44 @@ cc_library_shared {
     header_libs: [
         "libboost_config",
         "libboost_predef",
+        "libboost_static_assert",
+        "libboost_type_traits",
+        "libboost_detail",
+        "libboost_mpl",
+        "libboost_preprocessor",
+        "libboost_assert",
+        "libboost_throw_exception",
+        "libboost_core",
+        "libboost_lexical_cast",
+        "libboost_range",
+        "libboost_iterator",
+        "libboost_concept_check",
+        "libboost_utility",
+        "libboost_numeric_conversion",
+        "libboost_integer",
+        "libboost_array",
+        "libboost_move",
+        "libboost_smart_ptr",
+    ],
+    shared_libs: [
+        "libboost_container",
+    ],
+    local_include_dirs: [
+        "src/tr1",
     ],
     target: {
         android: {
             cflags: [
                 "-fPIC",
                 "-DPIC",
+                "-Wno-error=unused-parameter",
             ],
         },
         not_windows: {
             cflags: [
                 "-fPIC",
                 "-DPIC",
+                "-Wno-error=unused-parameter",
             ],
          },
     },
